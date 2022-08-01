@@ -11,17 +11,15 @@ from discord_webhook import DiscordEmbed, DiscordWebhook
 # Discord localhost Louis Vuitton Product Monitor built by Neel Dhall (Posty#0002)
 
 prods = ['ENTER PRODUCTS HERE']
-
 webhook = 'ADD WEBHOOK HERE'
 
-webhook1 = DiscordWebhook(url=webhook, username="Louis Vuitton Monitor")
-webhook2 = DiscordWebhook(url=webhook, username="Louis Vuitton Monitor")
+wh = DiscordWebhook(url=webhook, username="Louis Vuitton Monitor")
 embed1 = DiscordEmbed(color=2303786)
 embed1.set_footer(text="Posty#0002")
 embed1.set_timestamp()
 embed1.add_embed_field(name="Louis Vuitton Monitor", value="Monitoring SKUs: " + str(prods), inline=False)
-webhook1.add_embed(embed1)
-webhook1.execute()
+wh.add_embed(embed1)
+wh.execute()
 
 session = requests.Session()
 sessionHeaders = {
@@ -52,6 +50,6 @@ while True:
         embed2.set_footer(text="Posty#0002")
         embed2.set_timestamp()
         embed2.add_embed_field(name="Louis Vuitton Monitor", value=pidfinal + " In Stock\n" + "https://us.louisvuitton.com/eng-us/search/" + pidfinal, inline=False)
-        webhook2.add_embed(embed2)
-        webhook2.execute()
+        wh.add_embed(embed2)
+        wh.execute()
         time.sleep(1)
