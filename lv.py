@@ -55,10 +55,3 @@ while True:
         webhook2.add_embed(embed2)
         webhook2.execute()
         time.sleep(1)
-
-
-
-
-
-
-
